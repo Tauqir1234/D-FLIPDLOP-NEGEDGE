@@ -10,6 +10,12 @@ Quartus prime
 
 **THEORY**
 
+A D flip-flop (also called a data flip-flop or delay flip-flop) is one of the most commonly used flip-flops in digital electronics. It captures the value of the data input 
+𝐷
+D at a particular clock edge (rising or falling) and transfers it to the output 
+𝑄
+Q. The output remains constant until the next clock edge.
+
 **D Flip-Flop**
 
 D flip-flop operates with only positive clock transitions or negative clock transitions. Whereas, D latch operates with enable signal. That means, the output of D flip-flop is insensitive to the changes in the input, D except for active transition of the clock signal. The circuit diagram of D flip-flop is shown in the following figure.
@@ -28,17 +34,86 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Type the program in Quartus software.
+
+2. Compile and run the program.
+
+3. Generate the RTL schematic and save the logic diagram.
+
+4. Create nodes for inputs and outputs to generate the timing diagram.
+
+5. For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+ Program for flipflops and verify its truth table in quartus using Verilog programming. 
+
+**Developed by: Tauqir Ahmed S**
+
+**RegisterNumber: 24013512**
+
+module DFlipFlop(d, clk, rst, q, qbar);
+ 
+ input d;
+ 
+ input clk;
+ 
+ input rst;
+ 
+ output q;
+ 
+ output qbar;
+
+reg q;
+
+reg qbar;
+
+ always @ (posedge(clk) or posedge(rst)) begin
+ 
+ if (rst==1'b1)
+
+begin
+
+q=1'b0;
+
+qbar=1'b1;
+
+end
+
+else if (d==1'b0)
+
+begin
+
+q=1'b0;
+
+qbar=1'b1;
+
+end
+
+else
+
+begin
+
+q=1'b1;
+
+qbar=1'b0;
+
+end 
+
+end 
+
+endmodule
 
 **RTL LOGIC FOR FLIPFLOPS**
+
+![Screenshot 2024-12-17 182929](https://github.com/user-attachments/assets/9e6aa201-a49a-42fb-a4af-3ca5f0202c2d)
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot 2024-12-17 183057](https://github.com/user-attachments/assets/be1cc22a-83f8-4f86-9969-e5972a08b197)
+
 
 **RESULTS**
+
+The D flip-flop was implemented successfully using Verilog, and its functionality was validated through simulation. The output matches the expected functional table of the D flip-flop.
