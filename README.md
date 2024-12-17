@@ -11,9 +11,7 @@ Quartus prime
 **THEORY**
 
 A D flip-flop (also called a data flip-flop or delay flip-flop) is one of the most commonly used flip-flops in digital electronics. It captures the value of the data input 
-𝐷
 D at a particular clock edge (rising or falling) and transfers it to the output 
-𝑄
 Q. The output remains constant until the next clock edge.
 
 **D Flip-Flop**
